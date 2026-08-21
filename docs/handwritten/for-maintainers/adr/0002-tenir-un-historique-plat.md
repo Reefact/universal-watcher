@@ -13,7 +13,7 @@
 
 | Amendement | Pull Request |
 | - | - |
-| — | [#NN](https://github.com/Reefact/universal-watcher/pull/NN) |
+| — | [#83](https://github.com/Reefact/universal-watcher/pull/83) |
 
 -->
 
