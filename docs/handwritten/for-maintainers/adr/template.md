@@ -128,6 +128,10 @@
      dépendances externes, ce que specifications.md dit ou laisse ouvert sur
      le sujet. Quelqu'un qui découvre le projet doit comprendre pourquoi une
      décision était nécessaire.
+     SAUF ce qu'un ADR antérieur a déjà posé : ça se cite dans la
+     Justification, à l'endroit qui s'en sert, et ça ne se repose pas ici.
+     Le journal est cumulatif ; redire diverge. Voir README.md, « Un ADR
+     cite les précédents, il ne les redit pas ».
      Si cet ADR en remplace un autre, résumez ici ce que l'ancien décidait
      et pourquoi ça ne tient plus — le lecteur ne doit pas avoir à ouvrir
      l'ancien fichier pour comprendre le nouveau. -->
@@ -146,7 +150,10 @@
      LISEZ LES DEUX SECTIONS L'UNE CONTRE L'AUTRE, DANS LES DEUX SENS,
      jusqu'à ce qu'elles se répondent :
      - un ARGUMENT sans fait correspondant est toujours un défaut — soit
-       il manque un fait au Contexte, soit l'argument ne tient pas ;
+       il manque un fait au Contexte, soit l'argument ne tient pas. Un
+       argument adossé à un ADR antérieur fait exception : son fait est
+       posé, daté, ailleurs — il se cite ici et n'a pas à remonter au
+       Contexte ;
      - un FAIT sans argument n'en est pas forcément un : il peut poser le
        décor, ou être traité directement par la Décision. Mais c'est un
        signal à vérifier, pas à laisser filer.

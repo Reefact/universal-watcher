@@ -71,6 +71,28 @@ pour cette décision précise.
 L'articulation formelle entre les deux, notamment un versionnement de la
 spécification, n'est pas tranchée à ce jour.
 
+## Un ADR cite les précédents, il ne les redit pas
+
+Le journal est **cumulatif** : ce qu'un ADR a posé est acquis pour tous les suivants.
+Un ADR qui s'appuie sur un fait déjà enregistré le **cite là où il s'en sert** — il ne
+le repose pas dans son Contexte.
+
+La raison est celle qui interdit déjà de résumer `specifications.md` : un résumé diverge
+de sa source dès la première évolution, et plus personne ne sait laquelle fait autorité.
+La faute est la même à l'intérieur du journal, et elle s'aggrave avec le nombre d'ADR —
+au douzième, le Contexte serait un digest des onze précédents, chacun étant une
+divergence en attente.
+
+Le test : **si le fait cité change, un seul fichier doit être à modifier.**
+
+Corollaire pour la lecture croisée du Contexte et de la Justification : un argument qui
+s'appuie sur un ADR antérieur n'est pas un argument sans fait. Son fait existe, il est
+daté, il est ailleurs — et la citation suffit à le rendre atteignable.
+
+**L'exception est la supersession**, et elle est explicite : un ADR qui en remplace un
+autre résume ce que l'ancien décidait et pourquoi ça ne tient plus, parce que le lecteur
+ne doit pas avoir à ouvrir l'ancien fichier pour comprendre celui qui le remplace.
+
 ## Qui décide quoi
 
 Un agent **rédige, propose et recommande**. Il ne bascule aucun statut et ne crée
