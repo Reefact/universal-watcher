@@ -162,3 +162,4 @@ les dates et les tables.
 | ADR | Titre | Statut |
 |---|---|---|
 | [ADR-0001](0001-adopter-la-pratique-adr.md) | Adopter la pratique ADR | Accepté |
+| [ADR-0002](0002-tenir-un-historique-plat.md) | Tenir un historique plat sur `main` | Accepté |
