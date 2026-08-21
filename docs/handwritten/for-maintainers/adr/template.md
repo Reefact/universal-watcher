@@ -30,6 +30,11 @@
      Alternatives envisagées n'a pas de formule : une décision sans
      alternative réelle mérite qu'on se demande si elle vaut un ADR.
 
+     LE CONTRÔLE À PASSER AVANT DE PROPOSER est en fin de fichier : une
+     passe par section, sur le texte fini. Il n'est pas optionnel, il ne
+     se fait pas de tête, et ce qu'il a changé se dit dans la description
+     de la pull request.
+
      Voir docs/handwritten/for-maintainers/adr/README.md. -->
 
 | Champ | Valeur |
@@ -132,6 +137,10 @@
      Justification, à l'endroit qui s'en sert, et ça ne se repose pas ici.
      Le journal est cumulatif ; redire diverge. Voir README.md, « Un ADR
      cite les précédents, il ne les redit pas ».
+     UN FAIT DU CONTEXTE EST UN FAIT DE CE DÉPÔT, ou de l'outil dont la
+     décision dépend. Un fait vrai partout et de tout temps est de la
+     documentation générale : il n'a pas sa place ici, même exact, même
+     éclairant. Un ADR n'enseigne pas l'état de l'art.
      Si cet ADR en remplace un autre, résumez ici ce que l'ancien décidait
      et pourquoi ça ne tient plus — le lecteur ne doit pas avoir à ouvrir
      l'ancien fichier pour comprendre le nouveau. -->
@@ -173,6 +182,14 @@
      spécification (à renvoyer ailleurs). -->
 
 ## Alternatives envisagées
+
+<!-- UNE ALTERNATIVE EST EXCLUSIVE DE LA DÉCISION. Si on peut la retenir
+     ET tenir la Décision telle qu'elle est écrite, ce n'est pas une
+     alternative à cet ADR : c'en est une à une décision voisine, qui
+     n'est pas prise — ou qui ne l'est plus, si la Décision a bougé en
+     cours de rédaction. Elle n'a alors rien à faire ici.
+     Une alternative s'écarte par un ARGUMENT, jamais par un jugement :
+     « écartée : trop lourde » n'écarte rien. -->
 
 ### {Alternative 1}
 
@@ -228,3 +245,94 @@
 <!-- Optionnel : autres ADR, specifications.md, issues, pull requests. -->
 
 * ...
+
+<!-- CONTRÔLE AVANT DE PROPOSER.
+
+     Sur le TEXTE FINI, jamais sur l'intention. DANS L'ORDRE : chaque
+     passe suppose la précédente faite — la 3 ne juge bien un fait qu'une
+     fois la 2 passée, puisque la 2 aura supprimé les paragraphes qui le
+     faisaient paraître utile.
+     Les passes se répondent PAR ÉCRIT, en nommant à côté le paragraphe,
+     le fait ou le morceau de Décision visé : un audit fait de tête est un
+     audit qu'on croit avoir fait.
+     CE N'EST PAS UN JOURNAL DE BROUILLON. La description de la pull
+     request ne cataloguE pas ce qui a été ajouté puis retiré en cours de
+     rédaction — rien de tout ça n'a jamais atteint `main`, personne ne
+     peut le vérifier, et ça pousse le lecteur à s'y fier au lieu de lire
+     le document final. Une seule chose s'y écrit : SI LA DÉCISION A
+     BOUGÉ EN COURS DE RÉDACTION, et si oui, ce que sa forme finale couvre
+     que la première ne couvrait pas. C'est le seul fait qui change
+     comment le document doit être lu, au sens de la passe 2. Rien à
+     signaler si elle n'a pas bougé.
+
+     CE CONTRÔLE N'INTRODUIT AUCUNE RÈGLE. Chaque règle vit sous la
+     section qu'elle concerne ; il ne fait que les exécuter, dans un ordre
+     qui les rend efficaces. Si les deux semblent diverger, la section
+     fait foi.
+
+     Comme tous les commentaires de ce gabarit, ce bloc se supprime une
+     fois l'ADR rédigé.
+
+     1. LA DÉCISION, D'ABORD POUR ELLE-MÊME.
+        Une seule phrase ? Aucune justification, aucune alternative, aucun
+        détail d'implémentation qui ne fasse partie de la décision ?
+        Elle est l'ancre de tout ce qui suit : une ancre qu'on ne contrôle
+        pas ne tient rien.
+
+     2. LA DÉCISION COMME SEUL POINT D'ANCRAGE, paragraphe de
+        Justification par paragraphe. Deux questions, et la première
+        d'abord :
+        - QUE DÉFEND-IL DANS LA DÉCISION ? Nommez le morceau de phrase.
+          Sans réponse, ce paragraphe plaide pour une décision qu'on ne
+          prend pas : supprimez-le. C'est le SEUL contrôle qui attrape un
+          argument resté d'une rédaction antérieure — un tel argument peut
+          être parfaitement adossé au Contexte, et le rester.
+        - DE QUEL FAIT DU CONTEXTE SE SERT-IL ? Nommez-le. Impossible à
+          nommer : soit le fait manque au Contexte, soit l'argument ne
+          tient pas. Seule exception, un fait posé par un ADR antérieur —
+          il se cite sur place et ne remonte pas au Contexte.
+        Puis DANS L'AUTRE SENS, une fois les paragraphes passés : chaque
+        morceau de la Décision est-il défendu par au moins un d'entre eux ?
+        Une clause que rien n'argumente a été ajoutée sans être pesée. Le
+        défaut se voit surtout quand la Décision s'élargit après coup.
+        Auditez contre la Décision écrite, jamais contre la discussion qui
+        l'a produite : ce qui était acquis dans une conversation ne l'est
+        pas dans le document, et personne ne lira cette conversation. Si
+        la Décision a changé en cours de rédaction, TOUT ce qui a été
+        écrit avant elle est suspect.
+
+     3. CONTEXTE VERS LE RESTE DU DOCUMENT, phrase par phrase.
+        Pour chacune, NOMMEZ l'argument, l'alternative ou la conséquence
+        qui s'en sert. Rien à nommer : c'est du décor, et le décor ne se
+        garde que s'il est nécessaire pour comprendre pourquoi une
+        décision se posait.
+        Puis, sur chaque fait gardé, la règle écrite sous Contexte : est-ce
+        un fait de CE dépôt, ou de l'outil dont la décision dépend ?
+
+     4. ALTERNATIVES, une par une, contre la règle écrite sous leur
+        section : qu'est-ce que celle-ci changerait dans la Décision, et
+        est-elle écartée par un argument ou par un jugement ?
+
+     5. CONSÉQUENCES ET ACTIONS DE SUIVI.
+        Chaque conséquence découle-t-elle de CETTE Décision, ou d'une
+        décision voisine qu'on n'a pas prise ?
+        Chaque action de suivi énonce-t-elle un problème — le quoi et le
+        comment vivant dans l'issue — et porte-t-elle son numéro d'issue
+        en lien complet ?
+        Une section qui n'a rien de réel à dire porte-t-elle sa formule
+        exacte, plutôt qu'un contenu inventé ou une suppression ?
+
+     6. LES INTERDITS TRANSVERSES, en dernier, sur tout le document :
+        - aucun code, configuration, flag exact, extrait de commande ni
+          déroulé « comment c'est construit », dans AUCUNE section ;
+        - aucune anticipation d'une décision qui n'est pas prise, y
+          compris celle d'un futur ADR ;
+        - aucun `#NN` nu ;
+        - statut et dates conformes, et aucun statut basculé par un agent.
+
+     Ce contrôle ne rattrape pas le défaut d'annoncer qu'il a été passé
+     sans l'avoir été : c'est le seul défaut qu'un gabarit ne peut pas
+     voir. La description de la pull request n'en est pas la preuve — un
+     catalogue de brouillons retirés ne se vérifie pas plus qu'une simple
+     affirmation. La seule preuve, c'est le document final : c'est lui que
+     la relecture humaine évalue, pas le chemin pour y arriver. -->

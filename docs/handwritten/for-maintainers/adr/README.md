@@ -170,7 +170,9 @@ directement dans la rédaction, tant que l'ADR est encore librement modifiable.
 
 Une décision par fichier, nommé `NNNN-résumé-en-kebab-case.md`, copié depuis
 [`template.md`](template.md) — qui définit aussi la forme de l'en-tête, les statuts,
-les dates et les tables.
+les dates et les tables, et qui se termine par le contrôle à passer sur le texte fini
+avant de proposer un ADR. Ce que ce contrôle a changé se dit dans la description de la
+pull request : un audit qu'on ne peut pas relire ne se distingue pas d'un audit annoncé.
 
 > **Le gabarit paraît vide, et c'est voulu.** Toutes ses consignes sont en
 > commentaires HTML : elles ne s'affichent pas dans la vue rendue de GitHub, ce qui
